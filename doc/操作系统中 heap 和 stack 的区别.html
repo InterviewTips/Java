@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="堆栈的概念：堆栈是两种数据结构。堆栈都是一种数据项按序排列的数据结构，只能在一端(称为栈顶(top))对数据项进行插入和删除。在单片机应用中，堆栈是个特殊的存储区，主要功能是暂时存放数据和地址，通常用来保护断点和现场。要点：堆，队列优先,先进先出（FIFO—first in first out）。栈，先进后出(FILO—First-In/Last-Out)。 堆和栈的区别：一、堆栈空间分配区别：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stack和Heap的区别">
+<meta property="og:url" content="https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html">
+<meta property="og:site_name" content="InterviewTips - Java">
+<meta property="og:description" content="堆栈的概念：堆栈是两种数据结构。堆栈都是一种数据项按序排列的数据结构，只能在一端(称为栈顶(top))对数据项进行插入和删除。在单片机应用中，堆栈是个特殊的存储区，主要功能是暂时存放数据和地址，通常用来保护断点和现场。要点：堆，队列优先,先进先出（FIFO—first in first out）。栈，先进后出(FILO—First-In/Last-Out)。 堆和栈的区别：一、堆栈空间分配区别：">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-28T09:24:12.739Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Stack和Heap的区别">
+<meta name="twitter:description" content="堆栈的概念：堆栈是两种数据结构。堆栈都是一种数据项按序排列的数据结构，只能在一端(称为栈顶(top))对数据项进行插入和删除。在单片机应用中，堆栈是个特殊的存储区，主要功能是暂时存放数据和地址，通常用来保护断点和现场。要点：堆，队列优先,先进先出（FIFO—first in first out）。栈，先进后出(FILO—First-In/Last-Out)。 堆和栈的区别：一、堆栈空间分配区别：">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/Java/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/Java/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/Java/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Stack和Heap的区别</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/Java/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/Java/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/Java/">Inici</a></li>
+         
+          <li><a href="/Java/about/">Qui som</a></li>
+         
+          <li><a href="/Java/archives/">Articles</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/Java/transient变量有什么特点.html"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/Java/while 循环和 do-while 循环有什么不同.html"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html&text=Stack和Heap的区别"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html&title=Stack和Heap的区别"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html&is_video=false&description=Stack和Heap的区别"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Stack和Heap的区别&body=Check out this article: https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html&title=Stack和Heap的区别"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html&title=Stack和Heap的区别"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html&title=Stack和Heap的区别"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html&title=Stack和Heap的区别"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html&name=Stack和Heap的区别&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#堆栈的概念："><span class="toc-number">1.</span> <span class="toc-text">堆栈的概念：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#堆和栈的区别："><span class="toc-number">2.</span> <span class="toc-text">堆和栈的区别：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java中栈和堆的区别："><span class="toc-number">3.</span> <span class="toc-text">Java中栈和堆的区别：</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Stack和Heap的区别
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">InterviewTips - Java</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-08-28T09:24:02.000Z" itemprop="datePublished">2018-08-28</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="堆栈的概念："><a href="#堆栈的概念：" class="headerlink" title="堆栈的概念："></a>堆栈的概念：</h2><p>堆栈是两种数据结构。堆栈都是一种数据项按序排列的数据结构，只能在一端(称为栈顶(top))对数据项进行插入和删除。在单片机应用中，堆栈是个特殊的存储区，主要功能是暂时存放数据和地址，通常用来保护断点和现场。要点：堆，队列优先,先进先出（FIFO—first in first out）。栈，先进后出(FILO—First-In/Last-Out)。</p>
+<h2 id="堆和栈的区别："><a href="#堆和栈的区别：" class="headerlink" title="堆和栈的区别："></a>堆和栈的区别：</h2><p>一、堆栈空间分配区别：</p>
+<p>1、栈（操作系统）：由操作系统自动分配释放 ，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈；</p>
+<p>2、堆（操作系统）： 一般由程序员分配释放， 若程序员不释放，程序结束时可能由OS回收，分配方式倒是类似于链表。</p>
+<p>二、堆栈缓存方式区别：</p>
+<p>1、栈使用的是一级缓存， 他们通常都是被调用时处于存储空间中，调用完毕立即释放；</p>
+<p>2、堆是存放在二级缓存中，生命周期由虚拟机的垃圾回收算法来决定（并不是一旦成为孤儿对象就能被回收）。所以调用这些对象的速度要相对来得低一些。</p>
+<p>三、堆栈数据结构区别：</p>
+<p>堆（数据结构）：堆可以被看成是一棵树，如：堆排序；</p>
+<p>栈（数据结构）：一种先进后出的数据结构。</p>
+<h2 id="Java中栈和堆的区别："><a href="#Java中栈和堆的区别：" class="headerlink" title="Java中栈和堆的区别："></a>Java中栈和堆的区别：</h2><p>栈(stack)与堆(heap)都是Java用来在Ram中存放数据的地方。与C++不同，Java自动管理栈和堆，程序员不能直接地设置栈或堆。</p>
+<p>在函数中定义的一些基本类型的变量和对象的引用变量都在函数的栈内存中分配。当在一段代码块定义一个变量时，Java就在栈中为这个变量分配内存空间，当超过变量的作用域后，Java会自动释放掉为该变量所分配的内存空间，该内存空间可以立即被另作他用。</p>
+<p>堆内存用来存放由new创建的对象和数组，在堆中分配的内存，由Java虚拟机的自动垃圾回收器来管理。在堆中产生了一个数组或对象后，还可以在栈中定义一个特殊的变量，让栈中这个变量的取值等于数组或对象在堆内存中的首地址，栈中的这个变量就成了数组或对象的引用变量。引用变量就相当于是为数组或对象起的一个名称，以后就可以在程序中使用栈中的引用变量来访问堆中的数组或对象。</p>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/Java/">Inici</a></li>
+         
+          <li><a href="/Java/about/">Qui som</a></li>
+         
+          <li><a href="/Java/archives/">Articles</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#堆栈的概念："><span class="toc-number">1.</span> <span class="toc-text">堆栈的概念：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#堆和栈的区别："><span class="toc-number">2.</span> <span class="toc-text">堆和栈的区别：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java中栈和堆的区别："><span class="toc-number">3.</span> <span class="toc-text">Java中栈和堆的区别：</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html&text=Stack和Heap的区别"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html&title=Stack和Heap的区别"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html&is_video=false&description=Stack和Heap的区别"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Stack和Heap的区别&body=Check out this article: https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html&title=Stack和Heap的区别"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html&title=Stack和Heap的区别"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html&title=Stack和Heap的区别"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html&title=Stack和Heap的区别"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://interviewtips.github.io/操作系统中 heap 和 stack 的区别.html&name=Stack和Heap的区别&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 InterviewTips
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/Java/">Inici</a></li>
+         
+          <li><a href="/Java/about/">Qui som</a></li>
+         
+          <li><a href="/Java/archives/">Articles</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/Java/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/Java/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/Java/lib/jquery/jquery.min.js"></script>
+<script src="/Java/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/Java/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+

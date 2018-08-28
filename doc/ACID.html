@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="1. 原子性（Atomicity）事务被视为不可分割的最小单元，事务的所有操作要么全部提交成功，要么全部失败回滚。 回滚可以用日志来实现，日志记录着事务所执行的修改操作，在回滚时反向执行这些修改操作即可。 2. 一致性（Consistency）数据库在事务执行前后都保持一致性状态。在一致性状态下，所有事务对一个数据的读取结果都是相同的。 3. 隔离性（Isolation）一个事务所做的修改在最终提">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是 ACID">
+<meta property="og:url" content="https://interviewtips.github.io/ACID.html">
+<meta property="og:site_name" content="InterviewTips - Java">
+<meta property="og:description" content="1. 原子性（Atomicity）事务被视为不可分割的最小单元，事务的所有操作要么全部提交成功，要么全部失败回滚。 回滚可以用日志来实现，日志记录着事务所执行的修改操作，在回滚时反向执行这些修改操作即可。 2. 一致性（Consistency）数据库在事务执行前后都保持一致性状态。在一致性状态下，所有事务对一个数据的读取结果都是相同的。 3. 隔离性（Isolation）一个事务所做的修改在最终提">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-28T10:22:29.342Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="什么是 ACID">
+<meta name="twitter:description" content="1. 原子性（Atomicity）事务被视为不可分割的最小单元，事务的所有操作要么全部提交成功，要么全部失败回滚。 回滚可以用日志来实现，日志记录着事务所执行的修改操作，在回滚时反向执行这些修改操作即可。 2. 一致性（Consistency）数据库在事务执行前后都保持一致性状态。在一致性状态下，所有事务对一个数据的读取结果都是相同的。 3. 隔离性（Isolation）一个事务所做的修改在最终提">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/Java/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/Java/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/Java/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>什么是 ACID</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/Java/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/Java/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/Java/">Inici</a></li>
+         
+          <li><a href="/Java/about/">Qui som</a></li>
+         
+          <li><a href="/Java/archives/">Articles</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/Java/HashMap 和 HashTable 的区别.html"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://interviewtips.github.io/ACID.html"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://interviewtips.github.io/ACID.html&text=什么是 ACID"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://interviewtips.github.io/ACID.html&title=什么是 ACID"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://interviewtips.github.io/ACID.html&is_video=false&description=什么是 ACID"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=什么是 ACID&body=Check out this article: https://interviewtips.github.io/ACID.html"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://interviewtips.github.io/ACID.html&title=什么是 ACID"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://interviewtips.github.io/ACID.html&title=什么是 ACID"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://interviewtips.github.io/ACID.html&title=什么是 ACID"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://interviewtips.github.io/ACID.html&title=什么是 ACID"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://interviewtips.github.io/ACID.html&name=什么是 ACID&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-原子性（Atomicity）"><span class="toc-number">1.</span> <span class="toc-text">1. 原子性（Atomicity）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-一致性（Consistency）"><span class="toc-number">2.</span> <span class="toc-text">2. 一致性（Consistency）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-隔离性（Isolation）"><span class="toc-number">3.</span> <span class="toc-text">3. 隔离性（Isolation）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-持久性（Durability）"><span class="toc-number">4.</span> <span class="toc-text">4. 持久性（Durability）</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        什么是 ACID
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">InterviewTips - Java</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-08-27T09:20:14.000Z" itemprop="datePublished">2018-08-27</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="1-原子性（Atomicity）"><a href="#1-原子性（Atomicity）" class="headerlink" title="1. 原子性（Atomicity）"></a>1. 原子性（Atomicity）</h2><p>事务被视为不可分割的最小单元，事务的所有操作要么全部提交成功，要么全部失败回滚。</p>
+<p>回滚可以用日志来实现，日志记录着事务所执行的修改操作，在回滚时反向执行这些修改操作即可。</p>
+<h2 id="2-一致性（Consistency）"><a href="#2-一致性（Consistency）" class="headerlink" title="2. 一致性（Consistency）"></a>2. 一致性（Consistency）</h2><p>数据库在事务执行前后都保持一致性状态。在一致性状态下，所有事务对一个数据的读取结果都是相同的。</p>
+<h2 id="3-隔离性（Isolation）"><a href="#3-隔离性（Isolation）" class="headerlink" title="3. 隔离性（Isolation）"></a>3. 隔离性（Isolation）</h2><p>一个事务所做的修改在最终提交以前，对其它事务是不可见的。</p>
+<h2 id="4-持久性（Durability）"><a href="#4-持久性（Durability）" class="headerlink" title="4. 持久性（Durability）"></a>4. 持久性（Durability）</h2><p>一旦事务提交，则其所做的修改将会永远保存到数据库中。即使系统发生崩溃，事务执行的结果也不能丢失。</p>
+<p>可以通过数据库备份和恢复来实现，在系统发生崩溃时，使用备份的数据库进行数据恢复。</p>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/Java/">Inici</a></li>
+         
+          <li><a href="/Java/about/">Qui som</a></li>
+         
+          <li><a href="/Java/archives/">Articles</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-原子性（Atomicity）"><span class="toc-number">1.</span> <span class="toc-text">1. 原子性（Atomicity）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-一致性（Consistency）"><span class="toc-number">2.</span> <span class="toc-text">2. 一致性（Consistency）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-隔离性（Isolation）"><span class="toc-number">3.</span> <span class="toc-text">3. 隔离性（Isolation）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-持久性（Durability）"><span class="toc-number">4.</span> <span class="toc-text">4. 持久性（Durability）</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://interviewtips.github.io/ACID.html"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://interviewtips.github.io/ACID.html&text=什么是 ACID"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://interviewtips.github.io/ACID.html&title=什么是 ACID"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://interviewtips.github.io/ACID.html&is_video=false&description=什么是 ACID"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=什么是 ACID&body=Check out this article: https://interviewtips.github.io/ACID.html"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://interviewtips.github.io/ACID.html&title=什么是 ACID"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://interviewtips.github.io/ACID.html&title=什么是 ACID"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://interviewtips.github.io/ACID.html&title=什么是 ACID"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://interviewtips.github.io/ACID.html&title=什么是 ACID"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://interviewtips.github.io/ACID.html&name=什么是 ACID&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 InterviewTips
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/Java/">Inici</a></li>
+         
+          <li><a href="/Java/about/">Qui som</a></li>
+         
+          <li><a href="/Java/archives/">Articles</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/Java/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/Java/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/Java/lib/jquery/jquery.min.js"></script>
+<script src="/Java/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/Java/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+

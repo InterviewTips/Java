@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="涉及到精度问题 如果 a 和 b 是同一数据类型，则没有区别 如果 a 和 b 不是同一类型，需要考虑隐式类型转换的问题 因为字面量 1 是 int 类型，它比 short 类型精度要高，因此不能隐式地将 int 类型下转型为 short 类型。 12short s1 = 1;// s1 = s1 + 1; 此时会报错 但是使用 += 运算符可以执行隐式类型转换。 1s1 += 1; 上面的语句相">
+<meta property="og:type" content="article">
+<meta property="og:title" content="a = a + b 与 a += b 的区别？">
+<meta property="og:url" content="https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html">
+<meta property="og:site_name" content="InterviewTips - Java">
+<meta property="og:description" content="涉及到精度问题 如果 a 和 b 是同一数据类型，则没有区别 如果 a 和 b 不是同一类型，需要考虑隐式类型转换的问题 因为字面量 1 是 int 类型，它比 short 类型精度要高，因此不能隐式地将 int 类型下转型为 short 类型。 12short s1 = 1;// s1 = s1 + 1; 此时会报错 但是使用 += 运算符可以执行隐式类型转换。 1s1 += 1; 上面的语句相">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-28T09:22:30.480Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="a = a + b 与 a += b 的区别？">
+<meta name="twitter:description" content="涉及到精度问题 如果 a 和 b 是同一数据类型，则没有区别 如果 a 和 b 不是同一类型，需要考虑隐式类型转换的问题 因为字面量 1 是 int 类型，它比 short 类型精度要高，因此不能隐式地将 int 类型下转型为 short 类型。 12short s1 = 1;// s1 = s1 + 1; 此时会报错 但是使用 += 运算符可以执行隐式类型转换。 1s1 += 1; 上面的语句相">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/Java/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/Java/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/Java/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>a = a + b 与 a += b 的区别？</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/Java/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/Java/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/Java/">Inici</a></li>
+         
+          <li><a href="/Java/about/">Qui som</a></li>
+         
+          <li><a href="/Java/archives/">Articles</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/Java/JRE、JDK、JVM 及 JIT 之间有什么不同.html"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/Java/Java 有几种修饰符 分别用来修饰什么.html"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html&text=a = a + b 与 a += b 的区别？"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html&title=a = a + b 与 a += b 的区别？"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html&is_video=false&description=a = a + b 与 a += b 的区别？"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=a = a + b 与 a += b 的区别？&body=Check out this article: https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html&title=a = a + b 与 a += b 的区别？"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html&title=a = a + b 与 a += b 的区别？"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html&title=a = a + b 与 a += b 的区别？"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html&title=a = a + b 与 a += b 的区别？"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html&name=a = a + b 与 a += b 的区别？&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        a = a + b 与 a += b 的区别？
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">InterviewTips - Java</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-08-28T09:21:43.000Z" itemprop="datePublished">2018-08-28</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>涉及到精度问题</p>
+<p>如果 a 和 b 是同一数据类型，则没有区别</p>
+<p>如果 a 和 b 不是同一类型，需要考虑隐式类型转换的问题</p>
+<p>因为字面量 1 是 int 类型，它比 short 类型精度要高，因此不能隐式地将 int 类型下转型为 short 类型。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">short</span> s1 = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// s1 = s1 + 1; 此时会报错</span></span><br></pre></td></tr></table></figure>
+<p>但是使用 += 运算符可以执行隐式类型转换。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s1 += <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>上面的语句相当于将 s1 + 1 的计算结果进行了向下转型：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s1 = (<span class="keyword">short</span>) (s1 + <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/Java/">Inici</a></li>
+         
+          <li><a href="/Java/about/">Qui som</a></li>
+         
+          <li><a href="/Java/archives/">Articles</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html&text=a = a + b 与 a += b 的区别？"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html&title=a = a + b 与 a += b 的区别？"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html&is_video=false&description=a = a + b 与 a += b 的区别？"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=a = a + b 与 a += b 的区别？&body=Check out this article: https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html&title=a = a + b 与 a += b 的区别？"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html&title=a = a + b 与 a += b 的区别？"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html&title=a = a + b 与 a += b 的区别？"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html&title=a = a + b 与 a += b 的区别？"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://interviewtips.github.io/Java 中 a+=b 和 a=a+b 有什么区别.html&name=a = a + b 与 a += b 的区别？&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 InterviewTips
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/Java/">Inici</a></li>
+         
+          <li><a href="/Java/about/">Qui som</a></li>
+         
+          <li><a href="/Java/archives/">Articles</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/Java/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/Java/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/Java/lib/jquery/jquery.min.js"></script>
+<script src="/Java/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/Java/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
