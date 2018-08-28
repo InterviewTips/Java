@@ -1,8 +1,27 @@
-# Java 面试题
+---
+title: Java 面试题
+date: 9999-09-09 09:09:09
+tags: 
+---
 
 ## !!! TODO
 
 * [ ] 把下面这些问题进行整理
+
+## (如何贡献)How to Contribute
+
+- (Fork 此仓库))Fork this repository
+- 建立以下某个问题的 markdown 文件 文件头需要添加如下格式以便生成 静态博客
+    ```
+    ---
+    title: 什么是 ACID
+    date: 2018-08-27 17:20:14
+    tags: 
+    ---
+    ```
+    排版规范可见 [中文文案排版指北](https://github.com/InterviewTips/Teamwork-specification/blob/master/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%88%E6%8E%92%E7%89%88%E6%8C%87%E5%8C%97.md)
+- 问题 markdown 文件编写完成后在 README.md 文件中加入问题超链接
+- Pull request
 
 ---
 
@@ -13,8 +32,8 @@
 - 什么是 对象/关系 映射集成模块
 - 什么是 Java 的反射机制
 - [什么是 ACID](./ACID.md)
-- BS与CS的联系与区别
-- Cookie 和 Session的区别
+- BS 与 CS 的联系与区别
+- Cookie 和 Session 的区别
 - fail-fast 与 fail-safe 机制有什么区别
 - get 和 post 请求的区别
 - Interface 与 abstract 类的区别
@@ -72,7 +91,7 @@
 
 3. throws, throw, try, catch, finally分别代表什么意义
 
-**Java 有几种修饰符？分别用来修饰什么**
+[**Java 有几种修饰符？分别用来修饰什么**](./Java%20有几种修饰符%20分别用来修饰什么.md)
 
 **volatile**
 
@@ -81,7 +100,7 @@
 - volatile 类型变量提供什么保证？能使得一个非原子操作变成原子操作吗
 - 能创建 volatile 数组吗？
 
-**transient变量有什么特点**
+[**transient变量有什么特点**](./transient变量有什么特点.md)
 
 **super什么时候使用**
 

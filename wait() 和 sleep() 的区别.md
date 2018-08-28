@@ -1,4 +1,8 @@
-# wait() 和 sleep() 的区别
+---
+title: wait() 和 sleep() 的区别
+date: 2018-08-27 17:23:29
+tags: 
+---
 
 1、wait() 是 Object 的方法，而 sleep() 是 Thread 的静态方法；
 
