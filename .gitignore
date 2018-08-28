@@ -10,6 +10,12 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+# blog Folder
+blog/
+
+# vscode settiong
+.vscode/
+
 # Package Files #
 *.jar
 *.war
