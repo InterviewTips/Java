@@ -1,4 +1,8 @@
-# JRE、JDK、JVM 及 JIT 之间有什么不同
+---
+title: JRE、JDK、JVM 及 JIT 之间有什么不同
+date: 2018-08-28 17:23:09
+tags: 
+---
 
 ## java 虚拟机 (JVM)
 

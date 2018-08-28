@@ -1,4 +1,8 @@
-# HashMap 与 HashTable 的区别
+---
+title: HashMap 与 HashTable 的区别
+date: 2018-08-27 17:20:46
+tags: 
+---
 
 ## 1. 时间
 
