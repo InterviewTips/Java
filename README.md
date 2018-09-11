@@ -236,13 +236,12 @@ tags:
 - ArrayList
 
 1. ArrayList 和 HashMap 的默认大小是多数
-2. ArrayList 和 LinkedList 的区别，什么时候用 ArrayList？
+2. [ArrayList 和 LinkedList 的区别？](./ArrayList%20和%20LinkedList%20的区别.md)
 3. ArrayList 和 Set 的区别？
 4. ArrayList, LinkedList, Vector的区别
-5. ArrayList 是如何实现的，ArrayList 和 LinkedList 的区别
-6. ArrayList 如何实现扩容
-7. Array 和 ArrayList 有何区别？什么时候更适合用Array
-8. 说出ArraList,Vector, LinkedList的存储性能和特性
+5. ArrayList 如何实现扩容
+6. Array 和 ArrayList 有何区别？什么时候更适合用Array
+7. 说出ArraList,Vector, LinkedList的存储性能和特性
 
 **Map**
 
