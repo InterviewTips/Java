@@ -16,6 +16,9 @@ blog/
 # vscode settiong
 .vscode/
 
+# mac .DS_Store
+.DS_Store
+
 # Package Files #
 *.jar
 *.war
