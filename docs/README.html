@@ -1,138 +1,316 @@
 <!DOCTYPE html>
-<html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
 <head>
-    <!-- so meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="!!! TODO  把下面这些问题进行整理  (如何贡献)How to Contribute (Fork 此仓库))Fork this repository 建立以下某个问题的 markdown 文件 文件头需要添加如下格式以便生成 静态博客   12345---title: 什么是 ACIDdate: 2018-08-27 17:20:14tags: ---   排版规范可见 中文文案排版指北">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/Java/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/Java/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/Java/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Java/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/Java/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/Java/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/Java/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="!!! TODO  把下面这些问题进行整理  (如何贡献)How to Contribute (Fork 此仓库))Fork this repository 建立以下某个问题的 markdown 文件 文件头需要添加如下格式以便生成 静态博客   12345---title: 什么是 ACIDdate: 2018-08-27 17:20:14tags: ---   排版规范可见 中文文案排版指北">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 面试题">
 <meta property="og:url" content="https://interviewtips.github.io/README.html">
 <meta property="og:site_name" content="InterviewTips - Java">
 <meta property="og:description" content="!!! TODO  把下面这些问题进行整理  (如何贡献)How to Contribute (Fork 此仓库))Fork this repository 建立以下某个问题的 markdown 文件 文件头需要添加如下格式以便生成 静态博客   12345---title: 什么是 ACIDdate: 2018-08-27 17:20:14tags: ---   排版规范可见 中文文案排版指北">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-28T10:43:46.731Z">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-09-15T05:45:26.567Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 面试题">
 <meta name="twitter:description" content="!!! TODO  把下面这些问题进行整理  (如何贡献)How to Contribute (Fork 此仓库))Fork this repository 建立以下某个问题的 markdown 文件 文件头需要添加如下格式以便生成 静态博客   12345---title: 什么是 ACIDdate: 2018-08-27 17:20:14tags: ---   排版规范可见 中文文案排版指北">
-    
-    
-        
-          
-              <link rel="shortcut icon" href="/Java/images/favicon.ico">
-          
-        
-        
-          
-            <link rel="icon" type="image/png" href="/Java/images/favicon-192x192.png" sizes="192x192">
-          
-        
-        
-          
-            <link rel="apple-touch-icon" sizes="180x180" href="/Java/images/apple-touch-icon.png">
-          
-        
-    
-    <!-- title -->
-    <title>Java 面试题</title>
-    <!-- styles -->
-    <link rel="stylesheet" href="/Java/css/style.css">
-    <!-- persian styles -->
-    
-      <link rel="stylesheet" href="/Java/css/rtl.css">
-    
-    <!-- rss -->
-    
-    
-</head>
-
-<body class="max-width mx-auto px3 ltr">
-    
-      <div id="header-post">
-  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-         
-          <li><a href="/Java/">Inici</a></li>
-         
-          <li><a href="/Java/about/">Qui som</a></li>
-         
-          <li><a href="/Java/archives/">Articles</a></li>
-        
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        
-        <li><a class="icon" href="/Java/transient变量有什么特点.html"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
-        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
-      <span id="i-next" class="info" style="display:none;">Post Següent</span>
-      <span id="i-top" class="info" style="display:none;">Adalt</span>
-      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://interviewtips.github.io/README.html"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://interviewtips.github.io/README.html&text=Java 面试题"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://interviewtips.github.io/README.html&title=Java 面试题"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://interviewtips.github.io/README.html&is_video=false&description=Java 面试题"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Java 面试题&body=Check out this article: https://interviewtips.github.io/README.html"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://interviewtips.github.io/README.html&title=Java 面试题"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://interviewtips.github.io/README.html&title=Java 面试题"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://interviewtips.github.io/README.html&title=Java 面试题"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://interviewtips.github.io/README.html&title=Java 面试题"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://interviewtips.github.io/README.html&name=Java 面试题&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#TODO"><span class="toc-number">1.</span> <span class="toc-text">!!! TODO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何贡献-How-to-Contribute"><span class="toc-number">2.</span> <span class="toc-text">(如何贡献)How to Contribute</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-number">3.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关键字"><span class="toc-number">4.</span> <span class="toc-text">关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作符"><span class="toc-number">5.</span> <span class="toc-text">操作符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据结构"><span class="toc-number">6.</span> <span class="toc-text">数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是-B-树，B-树，列出实际的使用场景。"><span class="toc-number">7.</span> <span class="toc-text">什么是 B+树，B-树，列出实际的使用场景。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接口"><span class="toc-number">8.</span> <span class="toc-text">接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象"><span class="toc-number">9.</span> <span class="toc-text">对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何对一组对象进行排序"><span class="toc-number">10.</span> <span class="toc-text">如何对一组对象进行排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法"><span class="toc-number">11.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GC"><span class="toc-number">12.</span> <span class="toc-text">GC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM"><span class="toc-number">13.</span> <span class="toc-text">JVM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程"><span class="toc-number">14.</span> <span class="toc-text">多线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异常"><span class="toc-number">15.</span> <span class="toc-text">异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC"><span class="toc-number">16.</span> <span class="toc-text">JDBC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IO"><span class="toc-number">17.</span> <span class="toc-text">IO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象编程（OOP）"><span class="toc-number">18.</span> <span class="toc-text">面向对象编程（OOP）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#泛型"><span class="toc-number">19.</span> <span class="toc-text">泛型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工具类"><span class="toc-number">20.</span> <span class="toc-text">工具类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态代理"><span class="toc-number">21.</span> <span class="toc-text">动态代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计模式"><span class="toc-number">22.</span> <span class="toc-text">设计模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开放问题"><span class="toc-number">23.</span> <span class="toc-text">开放问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#知识面"><span class="toc-number">24.</span> <span class="toc-text">知识面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编程题"><span class="toc-number">25.</span> <span class="toc-text">编程题</span></a></li></ol>
-    </div>
-  </span>
-</div>
-
-    
-    <div class="content index my4">
-        
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
-    <h1 class="posttitle" itemprop="name headline">
-        Java 面试题
-    </h1>
 
 
 
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">InterviewTips - Java</span>
-      </span>
-      
-    <div class="postdate">
-        <time datetime="9999-09-09T01:09:09.000Z" itemprop="datePublished">9999-09-09</time>
-    </div>
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/Java/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
 
 
-      
 
-    </div>
-  </header>
+  <link rel="canonical" href="https://interviewtips.github.io/README.html"/>
+
+
+
+
+
+  <title>Java 面试题 | InterviewTips - Java</title>
   
 
-  <div class="content" itemprop="articleBody">
-    <h2 id="TODO"><a href="#TODO" class="headerlink" title="!!! TODO"></a>!!! TODO</h2><ul>
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/Java/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">InterviewTips - Java</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/Java/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/Java/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://interviewtips.github.io/Java/README.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="InterviewTips">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/Java/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="InterviewTips - Java">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java 面试题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="9999-09-09T09:09:09+08:00">
+                9999-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Java/README.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="README.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="TODO"><a href="#TODO" class="headerlink" title="!!! TODO"></a>!!! TODO</h2><ul>
 <li style="list-style: none"><input type="checkbox"> 把下面这些问题进行整理</li>
 </ul>
 <h2 id="如何贡献-How-to-Contribute"><a href="#如何贡献-How-to-Contribute" class="headerlink" title="(如何贡献)How to Contribute"></a>(如何贡献)How to Contribute</h2><ul>
@@ -154,8 +332,8 @@
 <li>BS 与 CS 的联系与区别</li>
 <li>Cookie 和 Session 的区别</li>
 <li>fail-fast 与 fail-safe 机制有什么区别</li>
-<li>get 和 post 请求的区别</li>
-<li>Interface 与 abstract 类的区别</li>
+<li><a href="./get%20和%20post%20请求的区别.html">get 和 post 请求的区别</a></li>
+<li><a href="./Interface%20与%20abstract%20类的区别.html">Interface 与 abstract 类的区别</a></li>
 <li>IOC的优点是什么</li>
 <li>IO 和 NIO的区别，NIO优点</li>
 <li>Java 8 / Java 7 为我们提供了什么新功能</li>
@@ -247,12 +425,11 @@
 <li><a href="./while%20循环和%20do-while%20循环有什么不同.html">while 循环和 do-while 循环有什么不同</a></li>
 </ul>
 <h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2><ul>
-<li>&amp;操作符和&amp;&amp;操作符有什么区别?</li>
+<li><a href="./&amp;%20操作符和%20&amp;&amp;%20操作符有什么区别.html">&amp; 操作符和 &amp;&amp; 操作符有什么区别?</a></li>
 <li><a href="./Java%20中%20a+=b%20和%20a=a+b%20有什么区别.html">a = a + b 与 a += b 的区别？</a></li>
-<li>逻辑操作符 (&amp;,|,^)与条件操作符(&amp;&amp;,||)的区别</li>
-<li>3*0.1 == 0.3 将会返回什么？true 还是 false？</li>
-<li>float f = 3.4; 是否正确？</li>
-<li>short s1 = 1; s1 = s1 + 1;有什么错?</li>
+<li><a href="./3*0.1%20==%200.3%20将会返回什么？true%20还是%20false.html">3*0.1 == 0.3 将会返回什么？true 还是 false ？</a></li>
+<li><a href="./float%20f%20=%203.4.html">float f = 3.4; 是否正确 ？</a></li>
+<li><a href="./short%20s1%20=%201;%20s1%20=%20s1%20+%201.html">short s1 = 1; s1 = s1 + 1;有什么错 ?</a></li>
 </ul>
 <h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p><strong>基础类型(Primitives)</strong></p>
 <ul>
@@ -353,10 +530,9 @@
 </ul>
 <ol>
 <li>ArrayList 和 HashMap 的默认大小是多数</li>
-<li>ArrayList 和 LinkedList 的区别，什么时候用 ArrayList？</li>
+<li><a href="./ArrayList%20和%20LinkedList%20的区别.html">ArrayList 和 LinkedList 的区别？</a></li>
 <li>ArrayList 和 Set 的区别？</li>
 <li>ArrayList, LinkedList, Vector的区别</li>
-<li>ArrayList 是如何实现的，ArrayList 和 LinkedList 的区别</li>
 <li>ArrayList 如何实现扩容</li>
 <li>Array 和 ArrayList 有何区别？什么时候更适合用Array</li>
 <li>说出ArraList,Vector, LinkedList的存储性能和特性</li>
@@ -1010,112 +1186,398 @@
 <li>计算两个日期之间的差距</li>
 </ul>
 
-  </div>
-</article>
-
-    <div class="blog-post-comments">
-        <div id="disqus_thread">
-            <noscript>Si us plau, activa JavaScript per poder veure el contingut.</noscript>
-        </div>
-    </div>
-
-
-
+      
     </div>
     
-      <div id="footer-post-container">
-  <div id="footer-post">
+    
+    
 
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/Java/">Inici</a></li>
-         
-          <li><a href="/Java/about/">Qui som</a></li>
-         
-          <li><a href="/Java/archives/">Articles</a></li>
-        
-      </ul>
-    </div>
+    
 
-    <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#TODO"><span class="toc-number">1.</span> <span class="toc-text">!!! TODO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何贡献-How-to-Contribute"><span class="toc-number">2.</span> <span class="toc-text">(如何贡献)How to Contribute</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-number">3.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关键字"><span class="toc-number">4.</span> <span class="toc-text">关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作符"><span class="toc-number">5.</span> <span class="toc-text">操作符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据结构"><span class="toc-number">6.</span> <span class="toc-text">数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是-B-树，B-树，列出实际的使用场景。"><span class="toc-number">7.</span> <span class="toc-text">什么是 B+树，B-树，列出实际的使用场景。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接口"><span class="toc-number">8.</span> <span class="toc-text">接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象"><span class="toc-number">9.</span> <span class="toc-text">对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何对一组对象进行排序"><span class="toc-number">10.</span> <span class="toc-text">如何对一组对象进行排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法"><span class="toc-number">11.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GC"><span class="toc-number">12.</span> <span class="toc-text">GC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM"><span class="toc-number">13.</span> <span class="toc-text">JVM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程"><span class="toc-number">14.</span> <span class="toc-text">多线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异常"><span class="toc-number">15.</span> <span class="toc-text">异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC"><span class="toc-number">16.</span> <span class="toc-text">JDBC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IO"><span class="toc-number">17.</span> <span class="toc-text">IO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象编程（OOP）"><span class="toc-number">18.</span> <span class="toc-text">面向对象编程（OOP）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#泛型"><span class="toc-number">19.</span> <span class="toc-text">泛型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工具类"><span class="toc-number">20.</span> <span class="toc-text">工具类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态代理"><span class="toc-number">21.</span> <span class="toc-text">动态代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计模式"><span class="toc-number">22.</span> <span class="toc-text">设计模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开放问题"><span class="toc-number">23.</span> <span class="toc-text">开放问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#知识面"><span class="toc-number">24.</span> <span class="toc-text">知识面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编程题"><span class="toc-number">25.</span> <span class="toc-text">编程题</span></a></li></ol>
-    </div>
+    
 
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://interviewtips.github.io/README.html"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://interviewtips.github.io/README.html&text=Java 面试题"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://interviewtips.github.io/README.html&title=Java 面试题"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://interviewtips.github.io/README.html&is_video=false&description=Java 面试题"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Java 面试题&body=Check out this article: https://interviewtips.github.io/README.html"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://interviewtips.github.io/README.html&title=Java 面试题"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://interviewtips.github.io/README.html&title=Java 面试题"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://interviewtips.github.io/README.html&title=Java 面试题"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://interviewtips.github.io/README.html&title=Java 面试题"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://interviewtips.github.io/README.html&name=Java 面试题&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-</ul>
+    
 
-    </div>
+    <footer class="post-footer">
+      
 
-    <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
-    </div>
+      
+      
+      
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Java/ArrayList 和 LinkedList 的区别.html" rel="next" title="ArrayList 和 LinkedList 的区别">
+                <i class="fa fa-chevron-left"></i> ArrayList 和 LinkedList 的区别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">InterviewTips</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/Java/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/InterviewTips" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TODO"><span class="nav-number">1.</span> <span class="nav-text">!!! TODO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何贡献-How-to-Contribute"><span class="nav-number">2.</span> <span class="nav-text">(如何贡献)How to Contribute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">3.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键字"><span class="nav-number">4.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作符"><span class="nav-number">5.</span> <span class="nav-text">操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构"><span class="nav-number">6.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-B-树，B-树，列出实际的使用场景。"><span class="nav-number">7.</span> <span class="nav-text">什么是 B+树，B-树，列出实际的使用场景。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口"><span class="nav-number">8.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">9.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何对一组对象进行排序"><span class="nav-number">10.</span> <span class="nav-text">如何对一组对象进行排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">11.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GC"><span class="nav-number">12.</span> <span class="nav-text">GC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JVM"><span class="nav-number">13.</span> <span class="nav-text">JVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程"><span class="nav-number">14.</span> <span class="nav-text">多线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常"><span class="nav-number">15.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC"><span class="nav-number">16.</span> <span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IO"><span class="nav-number">17.</span> <span class="nav-text">IO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象编程（OOP）"><span class="nav-number">18.</span> <span class="nav-text">面向对象编程（OOP）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#泛型"><span class="nav-number">19.</span> <span class="nav-text">泛型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具类"><span class="nav-number">20.</span> <span class="nav-text">工具类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态代理"><span class="nav-number">21.</span> <span class="nav-text">动态代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计模式"><span class="nav-number">22.</span> <span class="nav-text">设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开放问题"><span class="nav-number">23.</span> <span class="nav-text">开放问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识面"><span class="nav-number">24.</span> <span class="nav-text">知识面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编程题"><span class="nav-number">25.</span> <span class="nav-text">编程题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">InterviewTips</span>
+
+  
 </div>
 
-    
-    <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy; 2018 InterviewTips
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-          <li><a href="/Java/">Inici</a></li>
-         
-          <li><a href="/Java/about/">Qui som</a></li>
-         
-          <li><a href="/Java/archives/">Articles</a></li>
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
         
-      </ul>
-    </nav>
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
   </div>
-</footer>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/Java/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Java/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Java/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Java/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Java/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Java/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/Java/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/Java/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/Java/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/Java/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/Java/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/Java/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/Java/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://interviewtips-java.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://interviewtips.github.io/README.html';
+          this.page.identifier = 'README.html';
+          this.page.title = 'Java 面试题';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://interviewtips-java.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
-<!-- styles -->
-<link rel="stylesheet" href="/Java/lib/font-awesome/css/all.min.css">
-<link rel="stylesheet" href="/Java/lib/justified-gallery/css/justifiedGallery.min.css">
-
-<!-- jquery -->
-<script src="/Java/lib/jquery/jquery.min.js"></script>
-<script src="/Java/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
-<script src="/Java/js/main.js"></script>
-<!-- search -->
-
-<!-- Google Analytics -->
-
-<!-- Baidu Analytics -->
-
-<!-- Disqus Comments -->
-
-    <script type="text/javascript">
-        var disqus_shortname = 'interviewtips-java';
-
-        (function(){
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        }());
-    </script>
-
-
