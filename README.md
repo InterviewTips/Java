@@ -35,8 +35,8 @@ tags:
 - BS 与 CS 的联系与区别
 - Cookie 和 Session 的区别
 - fail-fast 与 fail-safe 机制有什么区别
-- get 和 post 请求的区别
-- Interface 与 abstract 类的区别
+- [get 和 post 请求的区别](./get%20和%20post%20请求的区别.md)
+- [Interface 与 abstract 类的区别](./Interface%20与%20abstract%20类的区别.md)
 - IOC的优点是什么
 - IO 和 NIO的区别，NIO优点
 - Java 8 / Java 7 为我们提供了什么新功能
@@ -130,12 +130,11 @@ tags:
 
 ## 操作符
 
-- &操作符和&&操作符有什么区别?
+- [& 操作符和 && 操作符有什么区别?](./&%20操作符和%20&&%20操作符有什么区别.md)
 - [a = a + b 与 a += b 的区别？](./Java%20中%20a+=b%20和%20a=a+b%20有什么区别.md)
-- 逻辑操作符 (&,|,^)与条件操作符(&&,||)的区别
-- 3*0.1 == 0.3 将会返回什么？true 还是 false？
-- float f = 3.4; 是否正确？
-- short s1 = 1; s1 = s1 + 1;有什么错?
+- [3*0.1 == 0.3 将会返回什么？true 还是 false ？](./3*0.1%20==%200.3%20将会返回什么？true%20还是%20false.md)
+- [float f = 3.4; 是否正确 ？](./float%20f%20=%203.4.md)
+- [short s1 = 1; s1 = s1 + 1;有什么错 ?](./short%20s1%20=%201;%20s1%20=%20s1%20+%201.md)
 
 ## 数据结构
 
@@ -237,13 +236,12 @@ tags:
 - ArrayList
 
 1. ArrayList 和 HashMap 的默认大小是多数
-2. ArrayList 和 LinkedList 的区别，什么时候用 ArrayList？
+2. [ArrayList 和 LinkedList 的区别？](./ArrayList%20和%20LinkedList%20的区别.md)
 3. ArrayList 和 Set 的区别？
 4. ArrayList, LinkedList, Vector的区别
-5. ArrayList 是如何实现的，ArrayList 和 LinkedList 的区别
-6. ArrayList 如何实现扩容
-7. Array 和 ArrayList 有何区别？什么时候更适合用Array
-8. 说出ArraList,Vector, LinkedList的存储性能和特性
+5. ArrayList 如何实现扩容
+6. Array 和 ArrayList 有何区别？什么时候更适合用Array
+7. 说出ArraList,Vector, LinkedList的存储性能和特性
 
 **Map**
 
